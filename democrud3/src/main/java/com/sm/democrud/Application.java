@@ -21,7 +21,7 @@ import org.springframework.web.multipart.support.StandardServletMultipartResolve
 @EntityScan(basePackages="com.sm.democrud.entities")
 
 public class Application {
-	// Main Application .. ..
+	// Main Application .
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
