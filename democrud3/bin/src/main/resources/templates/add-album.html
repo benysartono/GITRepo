@@ -1,0 +1,82 @@
+<form action="#" th:action="@{/addalbum}" th:object="${album}" method="post" enctype="multipart/form-data">
+	<table>
+	<tr>
+    <td>
+    <label for="albumNm">Album Name</label>
+    </td>
+    <td>
+    <input type="text" th:field="*{albumNm}" id="albumNm" placeholder="Album Name">
+    <span th:if="${#fields.hasErrors('albumNm')}" th:errors="*{albumNm}"></span>
+    </td>
+    </tr>
+	
+	<!-- 
+    <label for="albumImg">Image</label>
+    <input type="text" th:field="*{albumImg}" id="albumImg" placeholder="Image File Path">
+    <span th:if="${#fields.hasErrors('albumImg')}" th:errors="*{albumImg}"></span>
+	 -->
+	 
+	<tr>
+    <td>
+    <label>Image</label>
+    </td>
+    <td>
+    <input type="file" accept="image/*" class="form-control-file" id="albumImgFile" name="albumImgFile">
+    <span>jpg format max size 100K</span>
+    </td>
+    </tr>
+    
+
+	<tr>
+    <td>
+    <label for="artistNm">Artist Name</label>
+    </td>
+    <td>
+    <input type="text" th:field="*{artistNm}" id="artistNm" placeholder="Artist Name">
+    <span th:if="${#fields.hasErrors('artistNm')}" th:errors="*{artistNm}"></span>
+    </td>
+    </tr>
+	<!--
+    <label for="sampleAu">Sample Audio</label>
+    <input type="text" th:field="*{sampleAu}" id="sampleAu" placeholder="Sample Audio">
+    <span th:if="${#fields.hasErrors('sampleAu')}" th:errors="*{sampleAu}"></span>
+	-->
+
+	<tr>
+    <td>
+	<label>Sample Audio</label>
+    </td>
+    <td>
+    <input type="file" accept="image/*" class="form-control-file" id="audioFile" name="audioFile">
+    <span>mp3 format max size 100K</span>
+    </td>
+    </tr>
+	
+	
+	<tr>
+    <td>
+    <label for="dateRel">Date Release</label>
+    </td>
+    <td>
+    <input type="date" th:field="*{dateRel}" id="dateRel">
+    <span th:if="${#fields.hasErrors('dateRel')}" th:errors="*{dateRel}"></span>
+    </td>
+    </tr>
+
+	<tr>
+    <td>
+    <label for="price">Price</label>
+    </td>
+    <td>
+    <input type="text" th:field="*{price}" id="price" placeholder="Price">
+    <span th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></span>
+    </td>
+    </tr>
+
+	<tr>
+    <td>
+    <input type="submit" value="Add Album">   
+    </td>
+    </tr>
+    </table>
+</form>
